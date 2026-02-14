@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter Generator 💕</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div id="hearts-container"></div>
+    
+    <div class="container">
+        <header>
+            <h1>💌 Love Letter Generator 💌</h1>
+            <p class="subtitle">Create a heartfelt message for your special someone</p>
+        </header>
+
+        <div class="input-section">
+            <div class="input-group">
+                <label for="yourName">Your Name</label>
+                <input type="text" id="yourName" placeholder="Enter your name" required>
+            </div>
+
+            <div class="input-group">
+                <label for="partnerName">Partner's Name</label>
+                <input type="text" id="partnerName" placeholder="Enter your partner's name" required>
+            </div>
+
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="mood">Select Mood</label>
+                    <select id="mood">
+                        <option value="romantic">💕 Romantic</option>
+                        <option value="funny">😄 Funny</option>
+                        <option value="cute">🥰 Cute</option>
+                        <option value="poetic">🎭 Poetic</option>
+                        <option value="passionate">🔥 Passionate</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="letterLength">Letter Length</label>
+                    <select id="letterLength">
+                        <option value="short">⚡ Short & Sweet</option>
+                        <option value="medium" selected>📄 Medium</option>
+                        <option value="long">📚 Long & Detailed</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="occasion">Occasion (Optional)</label>
+                <select id="occasion">
+                    <option value="">Any Day</option>
+                    <option value="valentine">Valentine's Day</option>
+                    <option value="anniversary">Anniversary</option>
+                    <option value="birthday">Birthday</option>
+                    <option value="apology">Apology</option>
+                    <option value="justbecause">Just Because</option>
+                </select>
+            </div>
+
+            <div class="toggle-group">
+                <label class="toggle-label">
+                    <input type="checkbox" id="includeQuote">
+                    <span class="toggle-text">Include Love Quote</span>
+                </label>
+                <label class="toggle-label">
+                    <input type="checkbox" id="addEmojis" checked>
+                    <span class="toggle-text">Add Emojis</span>
+                </label>
+            </div>
+
+            <button id="generateBtn" class="generate-btn">Generate Love Letter ✨</button>
+            <button id="surpriseBtn" class="surprise-btn">Surprise Me! 🎲</button>
+        </div>
+
+        <div class="output-section" id="outputSection" style="display: none;">
+            <div class="letter-card">
+                <div class="letter-header">
+                    <h2>Your Love Letter</h2>
+                </div>
+                <div class="letter-content" id="letterContent"></div>
+                
+                <div class="letter-stats">
+                    <div class="stat-badge">
+                        <span class="stat-icon">📝</span>
+                        <span id="wordCount">0</span> words
+                    </div>
+                    <div class="stat-badge">
+                        <span class="stat-icon">💖</span>
+                        <span id="characterCount">0</span> characters
+                    </div>
+                    <div class="stat-badge">
+                        <span class="stat-icon">⏱️</span>
+                        ~<span id="readTime">0</span> min read
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="copyBtn" class="copy-btn">📋 Copy</button>
+                    <button id="downloadBtn" class="download-btn">💾 Download</button>
+                    <button id="printBtn" class="print-btn">🖨️ Print</button>
+                    <button id="shareBtn" class="share-btn">📱 Share</button>
+                </div>
+                
+                <button id="regenerateBtn" class="regenerate-btn">🔄 Generate Another</button>
+            </div>
+        </div>
+
+        <div class="toast" id="toast">Copied to clipboard! ✓</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
